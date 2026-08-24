@@ -1,17 +1,16 @@
-// Mobile nav toggle
-const navToggle = document.getElementById('navToggle');
-const siteNav = document.getElementById('site-nav');
+const burger = document.getElementById('burger');
+const nav = document.getElementById('nav');
 
-if (navToggle && siteNav) {
-  navToggle.addEventListener('click', () => {
-    const isOpen = siteNav.classList.toggle('is-open');
-    navToggle.setAttribute('aria-expanded', String(isOpen));
+if (burger && nav) {
+  burger.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    burger.setAttribute('aria-expanded', String(open));
   });
 
-  siteNav.querySelectorAll('a').forEach((link) => {
+  nav.querySelectorAll('a').forEach((link) => {
     link.addEventListener('click', () => {
-      siteNav.classList.remove('is-open');
-      navToggle.setAttribute('aria-expanded', 'false');
+      nav.classList.remove('open');
+      burger.setAttribute('aria-expanded', 'false');
     });
   });
 }

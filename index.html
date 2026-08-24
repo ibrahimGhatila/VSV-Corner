@@ -4,405 +4,412 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VSV Corner | Briyani Specialist</title>
-<meta name="description" content="VSV Corner: Indian cuisine and briyani specialist with outlets in Taiping, Batu Caves, Penang and Johor Bahru. [Placeholder copy: replace with the final brand description.]">
+<meta name="description" content="VSV Corner, briyani specialist. Dum-cooked daily in Taiping, Batu Caves, Penang and Johor Bahru.">
 <link rel="icon" href="data:,">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Work+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+<link rel="preload" href="assets/fonts/anek-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/karla.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/fonts.css">
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
 <!--
-  CONTENT + IMAGE NOTES FOR THE CLIENT
-  -------------------------------------
-  Copy: every sentence on this page is a placeholder draft written to show
-  tone and length. Swap in the real founding story, prices, hours and phone
-  numbers before launch. Anything in [ ] is a literal gap to fill.
+  NOTES FOR THE CLIENT
+  ====================
 
-  Photography: every photo below is a real, free-to-use photograph (Pexels
-  License: free for commercial use, no attribution required), chosen to
-  match its subject (biryani, banana-leaf serving, South Indian fried
-  chicken, a Kuala Lumpur shophouse, etc). They are NOT photos of VSV
-  Corner's actual food, staff or branches. They're accurate stand-ins so the
-  page shows fully dressed instead of grey boxes. Swap every one for the
-  brand's own photography before launch. Source pages are noted in each
-  image's data-source attribute.
+  DESIGN DIRECTION
+  The page is built around Malaysian kedai/mamak signboard visual language,
+  because that is what the brand already looks like in the real world: a
+  high-contrast royal blue and yellow signboard. So blue is the dominant
+  field here rather than the usual restaurant-website cream, and the menu
+  is set as a printed price board (leader dots running to right-aligned
+  prices) instead of a grid of photo cards.
 
-  Logo: still unresolved as of this draft. The real VSV Corner logo exists
-  in the brand's Bloom account, but this environment cannot download image
-  files from external hosts (network egress policy), so the header/footer
-  mark below is a temporary text lockup built from the brand's real Bloom
-  colour palette, not the actual logo artwork. Upload the logo file
-  directly into the chat and it can be dropped into /assets and wired in
-  properly.
+  TYPEFACES
+  Anek Latin for display. It is a variable family from Ek Type, an Indian
+  foundry, drawn to sit alongside Indic scripts. If you ever want a Tamil
+  line on the signage or the page, Anek Tamil is the matching cut and it
+  will lock up correctly. Karla carries body text.
+
+  COPY
+  Placeholder draft written to show tone and length. Anything in [ ] is a
+  literal gap for you to fill. The Malay words used (bungkus, nasi, ayam,
+  kambing, daging, telur) are the everyday terms, but have someone on the
+  team read them over before launch.
+
+  PHOTOGRAPHY
+  Real, free-to-use photographs (Pexels License, commercial use, no
+  attribution required), each picked to match its subject. They are NOT
+  photographs of VSV Corner's own food or outlets. Replace every one with
+  the brand's own photography before launch. Source page for each is in
+  its data-source attribute.
+
+  LOGO
+  Still not the real artwork. The mark below is a text lockup in the
+  brand's real colours. This environment is blocked from downloading image
+  files off external hosts, so the logo in the Bloom account could not be
+  pulled in. Send the file through and it drops into /assets.
 -->
 
 <a class="skip-link" href="#main">Skip to content</a>
 
-<header class="site-header" id="top">
-  <div class="wrap header-inner">
-    <a class="logo" href="#top" aria-label="VSV Corner home">
-      <span class="logo-badge">VSV</span>
-      <span class="logo-text">
-        <span class="logo-word">Corner</span>
-        <span class="logo-sub">Briyani Specialist</span>
+<header class="masthead" id="top">
+  <div class="shell masthead-in">
+    <a class="mark" href="#top" aria-label="VSV Corner, home">
+      <span class="mark-badge">VSV</span>
+      <span class="mark-name">
+        <b>Corner</b>
+        <i>Briyani Specialist</i>
       </span>
     </a>
 
-    <nav class="site-nav" id="site-nav" aria-label="Primary">
-      <a href="#who-we-are">Who We Are</a>
+    <nav class="nav" id="nav" aria-label="Primary">
+      <a href="#story">Who We Are</a>
       <a href="#menu">Menu</a>
       <a href="#history">History</a>
-      <a href="#locations">Locations</a>
-      <a class="nav-cta" href="#cta">Order Now</a>
+      <a href="#outlets">Outlets</a>
+      <a class="nav-order" href="#order">Order</a>
     </nav>
 
-    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="site-nav">
-      <span></span><span></span><span></span>
-      <span class="visually-hidden">Menu</span>
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span>
+      <span class="sr">Menu</span>
     </button>
   </div>
 </header>
 
 <main id="main">
 
-  <!-- ============ BANNER ============ -->
-  <section class="banner" id="banner">
-    <img
-      class="banner-photo"
-      src="https://images.pexels.com/photos/34484975/pexels-photo-34484975/free-photo-of-delicious-indian-biryani-platter-in-chennai.jpeg?auto=compress&cs=tinysrgb&w=1920"
-      data-source="https://www.pexels.com/photo/delicious-indian-biryani-platter-in-chennai-34484975/"
-      alt="Overhead view of a generous biryani platter with rice, meat and garnish"
-      loading="eager">
-    <div class="banner-scrim" aria-hidden="true"></div>
+  <!-- ═══════════ BANNER ═══════════ -->
+  <section class="hero">
+    <img class="hero-shot"
+         src="https://images.pexels.com/photos/34484975/pexels-photo-34484975/free-photo-of-delicious-indian-biryani-platter-in-chennai.jpeg?auto=compress&cs=tinysrgb&w=1920"
+         data-source="https://www.pexels.com/photo/delicious-indian-biryani-platter-in-chennai-34484975/"
+         alt="A large biryani platter, rice and meat, photographed from above"
+         loading="eager" fetchpriority="high">
+    <span class="hero-wash" aria-hidden="true"></span>
 
-    <div class="wrap banner-inner">
-      <p class="route-chip">Taiping <i></i> Batu Caves <i></i> Penang <i></i> Johor Bahru</p>
-      <h1>Briyani that made Taiping <span class="highlight">stand in line.</span></h1>
-      <p class="banner-lede">
-        Dum-cooked the same way since [placeholder: founding year]. Halal-certified,
-        made fresh every day, at every outlet.
-      </p>
-      <div class="banner-actions">
-        <a href="#cta" class="btn btn-primary">Order Online</a>
-        <a href="#locations" class="btn btn-outline-light">Find Your Nearest Outlet</a>
-      </div>
-    </div>
-  </section>
+    <div class="shell hero-in">
+      <p class="eyebrow">Sejak [year] &middot; Taiping</p>
 
-  <div class="marquee" role="presentation">
-    <div class="marquee-track">
-      <span>Ayam Briyani</span><span>·</span><span>Kambing Briyani</span><span>·</span><span>Daging Briyani</span><span>·</span><span>Telur Briyani</span><span>·</span><span>Acar</span><span>·</span><span>Air Bandung</span><span>·</span>
-      <span>Ayam Briyani</span><span>·</span><span>Kambing Briyani</span><span>·</span><span>Daging Briyani</span><span>·</span><span>Telur Briyani</span><span>·</span><span>Acar</span><span>·</span><span>Air Bandung</span><span>·</span>
-    </div>
-  </div>
+      <h1 class="hero-type">
+        <span class="l1">Dum-cooked</span>
+        <span class="l2">Briyani</span>
+        <span class="l3">every single day</span>
+      </h1>
 
-  <!-- ============ WHO WE ARE ============ -->
-  <section class="section" id="who-we-are">
-    <div class="wrap who-grid">
-      <div class="who-photos">
-        <span class="who-badge">Taiping-born</span>
-        <img
-          class="who-photo who-photo--main"
-          src="https://images.pexels.com/photos/35539329/pexels-photo-35539329.jpeg?auto=compress&cs=tinysrgb&w=1200"
-          data-source="https://www.pexels.com/photo/traditional-indian-biryani-served-on-banana-leaves-35539329/"
-          alt="Traditional Indian biryani served on a banana leaf"
-          loading="lazy">
-        <img
-          class="who-photo who-photo--accent"
-          src="https://images.pexels.com/photos/8229887/pexels-photo-8229887.jpeg?auto=compress&cs=tinysrgb&w=900"
-          data-source="https://www.pexels.com/photo/group-of-friends-sitting-at-the-table-in-a-restaurant-and-smiling-8229887/"
-          alt="Group of friends sharing a meal together at a restaurant table"
-          loading="lazy">
-      </div>
-
-      <div class="who-copy">
-        <p class="kicker">Who We Are</p>
-        <h2>We still run it like a corner shop.</h2>
-        <p>
-          VSV Corner started as a single corner lot in Taiping, where the briyani sold
-          out most days before the lunch crowd thinned. [Placeholder: replace with the
-          real founding story: year opened, founder's name, the detail that made people
-          queue.] The pot, the spice blend and the way the rice is layered haven't
-          changed. What's changed is how many outlets are cooking it.
+      <div class="hero-foot">
+        <p class="hero-note">
+          One pot, one spice blend, four outlets. Sealed and cooked slow each
+          morning, the way the first one was made in Taiping.
         </p>
-
-        <ul class="feature-list">
-          <li>
-            <div>
-              <h3>Dum-cooked, daily</h3>
-              <p>Every pot is sealed and slow-cooked fresh each morning. Nothing is made ahead and reheated.</p>
-            </div>
-          </li>
-          <li>
-            <div>
-              <h3>Halal-certified</h3>
-              <p>[Placeholder: certification body and reference number], displayed at every outlet.</p>
-            </div>
-          </li>
-          <li>
-            <div>
-              <h3>One spice blend, unchanged</h3>
-              <p>We use the same masala recipe across all four outlets, ground and mixed in-house.</p>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ MENU ============ -->
-  <section class="section section--tint" id="menu">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="kicker">Signature Plates</p>
-        <h2>What everyone orders</h2>
-        <p class="section-lede">A short list on purpose. [Placeholder: swap in the real full menu, prices and photography.]</p>
-      </div>
-
-      <div class="menu-grid">
-        <article class="menu-card">
-          <img src="https://images.pexels.com/photos/12737656/pexels-photo-12737656.jpeg?auto=compress&cs=tinysrgb&w=800"
-               data-source="https://www.pexels.com/photo/top-view-of-a-chicken-biryani-dish-12737817/"
-               alt="Top-down view of a chicken biryani dish" loading="lazy">
-          <div class="menu-card-body">
-            <h3>Ayam Briyani</h3>
-            <p>Bone-in chicken, slow-cooked into the rice. The one regulars order without looking at the board.</p>
-            <p class="menu-price">From RM [X.XX]</p>
-          </div>
-        </article>
-
-        <article class="menu-card">
-          <img src="https://images.pexels.com/photos/12392831/pexels-photo-12392831.jpeg?auto=compress&cs=tinysrgb&w=800"
-               data-source="https://www.pexels.com/photo/close-up-photo-of-delicious-biryani-12392831/"
-               alt="Close-up of a biryani rice dish (placeholder, swap for a real kambing briyani photo)" loading="lazy">
-          <div class="menu-card-body">
-            <h3>Kambing Briyani</h3>
-            <p>Mutton, cooked slow until it falls off the bone, layered through the rice.</p>
-            <p class="menu-price">From RM [X.XX]</p>
-          </div>
-        </article>
-
-        <article class="menu-card">
-          <img src="https://images.pexels.com/photos/5410410/pexels-photo-5410410.jpeg?auto=compress&cs=tinysrgb&w=800"
-               data-source="https://www.pexels.com/photo/biryani-on-a-plate-5410410/"
-               alt="Biryani rice dish on a plate (placeholder, swap for a real daging briyani photo)" loading="lazy">
-          <div class="menu-card-body">
-            <h3>Daging Briyani</h3>
-            <p>Beef briyani for the ones who ask "ada daging tak?" before they've even sat down.</p>
-            <p class="menu-price">From RM [X.XX]</p>
-          </div>
-        </article>
-
-        <article class="menu-card">
-          <img src="https://images.pexels.com/photos/31537385/pexels-photo-31537385.jpeg?auto=compress&cs=tinysrgb&w=800"
-               data-source="https://www.pexels.com/photo/delicious-biryani-with-boiled-egg-served-on-table-31537385/"
-               alt="Biryani served with a boiled egg on top" loading="lazy">
-          <div class="menu-card-body">
-            <h3>Telur Briyani</h3>
-            <p>Egg briyani for when you want the rice and the spice without the meat.</p>
-            <p class="menu-price">From RM [X.XX]</p>
-          </div>
-        </article>
-
-        <article class="menu-card">
-          <img src="https://images.pexels.com/photos/36652961/pexels-photo-36652961/free-photo-of-delicious-indian-biryani-with-sides-on-wooden-board.jpeg?auto=compress&cs=tinysrgb&w=800"
-               data-source="https://www.pexels.com/search/biryani%20dish/"
-               alt="Biryani served with an assortment of side dishes on a wooden board" loading="lazy">
-          <div class="menu-card-body">
-            <h3>Briyani Special</h3>
-            <p>[Placeholder: describe the house special / mixed platter combination.]</p>
-            <p class="menu-price">From RM [X.XX]</p>
-          </div>
-        </article>
-
-        <article class="menu-card">
-          <img src="https://images.pexels.com/photos/35071813/pexels-photo-35071813.jpeg?auto=compress&cs=tinysrgb&w=800"
-               data-source="https://www.pexels.com/photo/delicious-south-indian-chicken-fry-with-slices-of-onions-35071813/"
-               alt="South Indian style fried chicken with sliced onions" loading="lazy">
-          <div class="menu-card-body">
-            <h3>Ayam Goreng Berempah</h3>
-            <p>Spiced fried chicken on the side, for the table that never orders just one plate.</p>
-            <p class="menu-price">From RM [X.XX]</p>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ HISTORY ============ -->
-  <section class="section history" id="history">
-    <div class="wrap history-grid">
-      <img
-        class="history-photo"
-        src="https://images.pexels.com/photos/33947401/pexels-photo-33947401/free-photo-of-authentic-chicken-biryani-in-clay-pot.jpeg?auto=compress&cs=tinysrgb&w=1200"
-        data-source="https://www.pexels.com/photo/33947401/"
-        alt="Authentic biryani cooked and served in a traditional clay pot"
-        loading="lazy">
-
-      <div class="history-copy">
-        <p class="kicker">Our History</p>
-        <h2>From one pot in Taiping to four states.</h2>
-        <p>[Placeholder: expand each milestone below with the real year and the real detail: a queue out the door, a second stove installed, a first delivery order. Specific details are what make a history section believable.]</p>
-
-        <ol class="timeline">
-          <li>
-            <span class="timeline-year">[Year]</span>
-            <div>
-              <h3>Taiping: the first pot</h3>
-              <p>[Placeholder: the corner lot, the first pot, the first regulars.]</p>
-            </div>
-          </li>
-          <li>
-            <span class="timeline-year">[Year]</span>
-            <div>
-              <h3>Batu Caves opens</h3>
-              <p>[Placeholder: why Batu Caves, what changed operationally.]</p>
-            </div>
-          </li>
-          <li>
-            <span class="timeline-year">[Year]</span>
-            <div>
-              <h3>Penang joins the map</h3>
-              <p>[Placeholder: the detail that made this expansion notable.]</p>
-            </div>
-          </li>
-          <li>
-            <span class="timeline-year">[Year]</span>
-            <div>
-              <h3>Johor Bahru: outlet number four</h3>
-              <p>[Placeholder: where things stand today, what's next.]</p>
-            </div>
-          </li>
-        </ol>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ LOCATIONS ============ -->
-  <section class="section section--tint locations-section" id="locations">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="kicker">Find Us</p>
-        <h2>Four outlets, one standard</h2>
-        <p class="section-lede">Tap an outlet for directions, hours and the number to call ahead.</p>
-      </div>
-
-      <div class="locations-layout">
-        <img
-          class="locations-photo"
-          src="https://images.pexels.com/photos/15836671/pexels-photo-15836671.jpeg?auto=compress&cs=tinysrgb&w=1200"
-          data-source="https://www.pexels.com/photo/facade-of-a-building-in-kuala-lumpur-malaysia-18194391/"
-          alt="Colourful shophouse facade in Malaysia (general streetscape, not a specific VSV Corner outlet)"
-          loading="lazy">
-
-        <div class="locations-grid">
-          <a class="location-card" href="#" aria-label="Get directions to VSV Corner Taiping (placeholder link)">
-            <span class="location-tag">Original Outlet</span>
-            <h3>Taiping</h3>
-            <p>[Placeholder address line, Taiping, Perak]</p>
-            <p class="location-hours">Daily, [11:00 AM to 10:00 PM]</p>
-            <span class="location-link">Get Directions →</span>
-          </a>
-
-          <a class="location-card" href="#" aria-label="Get directions to VSV Corner Batu Caves (placeholder link)">
-            <span class="location-tag">Selangor</span>
-            <h3>Batu Caves</h3>
-            <p>[Placeholder address line, Batu Caves, Selangor]</p>
-            <p class="location-hours">Daily, [11:00 AM to 10:00 PM]</p>
-            <span class="location-link">Get Directions →</span>
-          </a>
-
-          <a class="location-card" href="#" aria-label="Get directions to VSV Corner Penang (placeholder link)">
-            <span class="location-tag">Penang</span>
-            <h3>Penang</h3>
-            <p>[Placeholder address line, Penang]</p>
-            <p class="location-hours">Daily, [11:00 AM to 10:00 PM]</p>
-            <span class="location-link">Get Directions →</span>
-          </a>
-
-          <a class="location-card" href="#" aria-label="Get directions to VSV Corner Johor Bahru (placeholder link)">
-            <span class="location-tag">Johor</span>
-            <h3>Johor Bahru</h3>
-            <p>[Placeholder address line, Johor Bahru, Johor]</p>
-            <p class="location-hours">Daily, [11:00 AM to 10:00 PM]</p>
-            <span class="location-link">Get Directions →</span>
-          </a>
+        <div class="hero-act">
+          <a href="#order" class="btn btn-fill">Order &amp; Bungkus</a>
+          <a href="#outlets" class="btn btn-ghost">Find an outlet</a>
         </div>
       </div>
     </div>
+
+    <p class="hero-cert"><span>Halal</span> [cert. body + ref no.]</p>
   </section>
 
-  <!-- ============ CALL TO ACTION ============ -->
-  <section class="cta" id="cta">
-    <img
-      class="cta-photo"
-      src="https://images.pexels.com/photos/32281706/pexels-photo-32281706.jpeg?auto=compress&cs=tinysrgb&w=1920"
-      data-source="https://www.pexels.com/photo/assorted-spices-in-bowls-with-cinnamon-sticks-32281706/"
-      alt="Assorted whole Indian spices in bowls"
-      loading="lazy">
-    <div class="cta-scrim" aria-hidden="true"></div>
+  <!-- ═══════════ TICKER ═══════════ -->
+  <div class="ticker" role="presentation">
+    <div class="ticker-run">
+      <span>Nasi Briyani</span><b>✳</b><span>Ayam</span><b>✳</b><span>Kambing</span><b>✳</b><span>Daging</span><b>✳</b><span>Telur</span><b>✳</b><span>Acar</span><b>✳</b><span>Air Bandung</span><b>✳</b>
+      <span>Nasi Briyani</span><b>✳</b><span>Ayam</span><b>✳</b><span>Kambing</span><b>✳</b><span>Daging</span><b>✳</b><span>Telur</span><b>✳</b><span>Acar</span><b>✳</b><span>Air Bandung</span><b>✳</b>
+    </div>
+  </div>
 
-    <div class="wrap cta-inner">
-      <h2>Craving briyani right now?</h2>
-      <p>Order for delivery, or call ahead and we'll have it ready for pickup.</p>
-      <div class="cta-actions">
-        <a href="#" class="btn btn-yellow">Order via Grab</a>
-        <a href="#" class="btn btn-yellow">Order via foodpanda</a>
-        <a href="tel:+60000000000" class="btn btn-outline-light">Call / WhatsApp [placeholder number]</a>
+  <!-- ═══════════ WHO WE ARE ═══════════ -->
+  <section class="story" id="story">
+    <div class="shell story-in">
+
+      <div class="story-lead">
+        <p class="tag">Who We Are</p>
+        <h2>We never stopped running it like a corner shop.</h2>
+      </div>
+
+      <div class="story-body">
+        <p class="story-first">
+          VSV Corner started on one corner lot in Taiping, and most days the
+          briyani was gone before the lunch crowd thinned out.
+          [Placeholder: the real founding story goes here. Year, founder's
+          name, and the specific thing that made people queue.]
+        </p>
+        <p>
+          The pot has not changed. Neither has the spice blend, or the way the
+          rice gets layered. The only thing that grew is how many kitchens are
+          doing it at once.
+        </p>
+      </div>
+
+      <figure class="story-shot">
+        <img src="https://images.pexels.com/photos/35539329/pexels-photo-35539329.jpeg?auto=compress&cs=tinysrgb&w=1200"
+             data-source="https://www.pexels.com/photo/traditional-indian-biryani-served-on-banana-leaves-35539329/"
+             alt="Biryani served on a banana leaf" loading="lazy">
+        <figcaption>Served on leaf, the way it has always gone out.</figcaption>
+      </figure>
+
+      <dl class="facts">
+        <div>
+          <dt>Outlets</dt>
+          <dd>04</dd>
+          <p>Taiping, Batu Caves, Penang, Johor Bahru.</p>
+        </div>
+        <div>
+          <dt>Cooked from</dt>
+          <dd>5<span>am</span></dd>
+          <p>Every pot sealed and dum-cooked before service, never reheated.</p>
+        </div>
+        <div>
+          <dt>Spice blend</dt>
+          <dd>01</dd>
+          <p>Ground and mixed in-house, identical at all four kitchens.</p>
+        </div>
+      </dl>
+
+    </div>
+  </section>
+
+  <!-- ═══════════ MENU ═══════════ -->
+  <section class="menu" id="menu">
+    <div class="shell">
+
+      <div class="menu-head">
+        <p class="tag tag-light">The Board</p>
+        <h2>What everybody orders</h2>
+        <p class="menu-sub">A short board on purpose. [Placeholder: drop in the full menu and the real prices.]</p>
+      </div>
+
+      <div class="menu-grid">
+
+        <div class="board">
+          <div class="board-top">
+            <span>Nasi Briyani</span>
+            <span>RM</span>
+          </div>
+
+          <ul class="board-list">
+            <li>
+              <p class="row"><span class="nm">Ayam</span><span class="dot" aria-hidden="true"></span><span class="pr">[00.00]</span></p>
+              <p class="sub">Bone-in chicken, cooked down into the rice. Ordered without looking at the board.</p>
+            </li>
+            <li>
+              <p class="row"><span class="nm">Kambing</span><span class="dot" aria-hidden="true"></span><span class="pr">[00.00]</span></p>
+              <p class="sub">Mutton, taken slow until it gives up the bone.</p>
+            </li>
+            <li>
+              <p class="row"><span class="nm">Daging</span><span class="dot" aria-hidden="true"></span><span class="pr">[00.00]</span></p>
+              <p class="sub">Beef, for the table that asks "ada daging tak?" before sitting down.</p>
+            </li>
+            <li>
+              <p class="row"><span class="nm">Telur</span><span class="dot" aria-hidden="true"></span><span class="pr">[00.00]</span></p>
+              <p class="sub">Egg. The rice and the spice, nothing else needed.</p>
+            </li>
+            <li>
+              <p class="row"><span class="nm">Special</span><span class="dot" aria-hidden="true"></span><span class="pr">[00.00]</span></p>
+              <p class="sub">[Placeholder: what goes on the house platter.]</p>
+            </li>
+          </ul>
+
+          <div class="board-top board-mid">
+            <span>Sebelah &amp; Minum</span>
+            <span>RM</span>
+          </div>
+
+          <ul class="board-list">
+            <li>
+              <p class="row"><span class="nm">Ayam Goreng Berempah</span><span class="dot" aria-hidden="true"></span><span class="pr">[00.00]</span></p>
+              <p class="sub">Spiced fried chicken, for the table that never orders one plate.</p>
+            </li>
+            <li>
+              <p class="row"><span class="nm">Acar</span><span class="dot" aria-hidden="true"></span><span class="pr">[00.00]</span></p>
+            </li>
+            <li>
+              <p class="row"><span class="nm">Air Bandung</span><span class="dot" aria-hidden="true"></span><span class="pr">[00.00]</span></p>
+            </li>
+          </ul>
+
+          <p class="board-foot">Prices are placeholders. Bungkus available at every outlet.</p>
+        </div>
+
+        <div class="menu-shots">
+          <figure>
+            <img src="https://images.pexels.com/photos/33947401/pexels-photo-33947401/free-photo-of-authentic-chicken-biryani-in-clay-pot.jpeg?auto=compress&cs=tinysrgb&w=1000"
+                 data-source="https://www.pexels.com/photo/33947401/"
+                 alt="Biryani cooked and served in a clay pot" loading="lazy">
+          </figure>
+          <figure>
+            <img src="https://images.pexels.com/photos/35071813/pexels-photo-35071813.jpeg?auto=compress&cs=tinysrgb&w=1000"
+                 data-source="https://www.pexels.com/photo/delicious-south-indian-chicken-fry-with-slices-of-onions-35071813/"
+                 alt="South Indian style fried chicken with sliced onion" loading="lazy">
+            <figcaption>Ayam goreng berempah</figcaption>
+          </figure>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ HISTORY ═══════════ -->
+  <section class="past" id="history">
+    <div class="shell">
+      <div class="past-head">
+        <p class="tag">Our History</p>
+        <h2>One pot, then four kitchens.</h2>
+        <p class="past-sub">[Placeholder: give each year below a real detail. A queue out the door, a second stove, the first bungkus order. Specifics are what stop a history section reading like filler.]</p>
+      </div>
+
+      <ol class="years">
+        <li>
+          <span class="yr">[Year]</span>
+          <div class="yr-body">
+            <h3>Taiping</h3>
+            <p>[Placeholder: the corner lot, the first pot, the regulars who turned up before opening.]</p>
+          </div>
+        </li>
+        <li>
+          <span class="yr">[Year]</span>
+          <div class="yr-body">
+            <h3>Batu Caves</h3>
+            <p>[Placeholder: why Batu Caves, and what had to change in the kitchen to serve two of them.]</p>
+          </div>
+        </li>
+        <li>
+          <span class="yr">[Year]</span>
+          <div class="yr-body">
+            <h3>Penang</h3>
+            <p>[Placeholder: the detail worth remembering about this one.]</p>
+          </div>
+        </li>
+        <li>
+          <span class="yr">[Year]</span>
+          <div class="yr-body">
+            <h3>Johor Bahru</h3>
+            <p>[Placeholder: where things stand now, and what is next.]</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ═══════════ OUTLETS ═══════════ -->
+  <section class="outlets" id="outlets">
+    <div class="shell">
+      <div class="outlets-head">
+        <p class="tag tag-light">Find Us</p>
+        <h2>Four outlets, one kitchen standard</h2>
+      </div>
+
+      <ul class="outlet-list">
+        <li>
+          <a href="#">
+            <span class="no">01</span>
+            <span class="place">
+              <b>Taiping</b>
+              <i>Perak &middot; the original</i>
+            </span>
+            <span class="addr">[Placeholder address line, Taiping, Perak]</span>
+            <span class="hrs">[11:00 to 22:00] daily</span>
+            <span class="go" aria-hidden="true">Directions →</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span class="no">02</span>
+            <span class="place">
+              <b>Batu Caves</b>
+              <i>Selangor</i>
+            </span>
+            <span class="addr">[Placeholder address line, Batu Caves, Selangor]</span>
+            <span class="hrs">[11:00 to 22:00] daily</span>
+            <span class="go" aria-hidden="true">Directions →</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span class="no">03</span>
+            <span class="place">
+              <b>Penang</b>
+              <i>Pulau Pinang</i>
+            </span>
+            <span class="addr">[Placeholder address line, Penang]</span>
+            <span class="hrs">[11:00 to 22:00] daily</span>
+            <span class="go" aria-hidden="true">Directions →</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span class="no">04</span>
+            <span class="place">
+              <b>Johor Bahru</b>
+              <i>Johor</i>
+            </span>
+            <span class="addr">[Placeholder address line, Johor Bahru, Johor]</span>
+            <span class="hrs">[11:00 to 22:00] daily</span>
+            <span class="go" aria-hidden="true">Directions →</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ═══════════ CALL TO ACTION ═══════════ -->
+  <section class="order" id="order">
+    <div class="shell order-in">
+      <h2>Lapar? Bungkus one.</h2>
+      <p>Order for delivery, or call the outlet and we will have it wrapped and waiting.</p>
+      <div class="order-act">
+        <a href="#" class="btn btn-dark">Grab</a>
+        <a href="#" class="btn btn-dark">foodpanda</a>
+        <a href="tel:+60000000000" class="btn btn-line">Call [placeholder number]</a>
       </div>
     </div>
   </section>
 
 </main>
 
-<footer class="site-footer">
-  <div class="wrap footer-inner">
-    <div class="footer-brand">
-      <a class="logo logo--footer" href="#top" aria-label="VSV Corner home">
-        <span class="logo-badge">VSV</span>
-        <span class="logo-text">
-          <span class="logo-word">Corner</span>
-          <span class="logo-sub">Briyani Specialist</span>
+<footer class="foot">
+  <div class="shell foot-in">
+    <div class="foot-brand">
+      <a class="mark mark-foot" href="#top" aria-label="VSV Corner, home">
+        <span class="mark-badge">VSV</span>
+        <span class="mark-name">
+          <b>Corner</b>
+          <i>Briyani Specialist</i>
         </span>
       </a>
-      <p>Real briyani, dum-cooked daily. [Placeholder tagline / short brand line.]</p>
+      <p>Dum-cooked briyani, made fresh in Taiping, Batu Caves, Penang and Johor Bahru.</p>
     </div>
 
-    <div class="footer-col">
+    <nav class="foot-col" aria-label="Outlets">
       <h4>Outlets</h4>
-      <ul>
-        <li><a href="#locations">Taiping</a></li>
-        <li><a href="#locations">Batu Caves</a></li>
-        <li><a href="#locations">Penang</a></li>
-        <li><a href="#locations">Johor Bahru</a></li>
-      </ul>
-    </div>
+      <a href="#outlets">Taiping</a>
+      <a href="#outlets">Batu Caves</a>
+      <a href="#outlets">Penang</a>
+      <a href="#outlets">Johor Bahru</a>
+    </nav>
 
-    <div class="footer-col">
-      <h4>Explore</h4>
-      <ul>
-        <li><a href="#who-we-are">Who We Are</a></li>
-        <li><a href="#menu">Menu</a></li>
-        <li><a href="#history">History</a></li>
-        <li><a href="#cta">Order</a></li>
-      </ul>
-    </div>
+    <nav class="foot-col" aria-label="Pages">
+      <h4>Pages</h4>
+      <a href="#story">Who We Are</a>
+      <a href="#menu">Menu</a>
+      <a href="#history">History</a>
+      <a href="#order">Order</a>
+    </nav>
 
-    <div class="footer-col">
-      <h4>Connect</h4>
-      <ul>
-        <li><a href="https://instagram.com/vsv_corner" target="_blank" rel="noopener">Instagram: @vsv_corner</a></li>
-        <li><a href="tel:+60000000000">[Placeholder phone number]</a></li>
-        <li><a href="mailto:hello@vsvcorner.example">[Placeholder email]</a></li>
-      </ul>
-    </div>
+    <nav class="foot-col" aria-label="Contact">
+      <h4>Contact</h4>
+      <a href="https://instagram.com/vsv_corner" target="_blank" rel="noopener">@vsv_corner</a>
+      <a href="tel:+60000000000">[Placeholder phone]</a>
+      <a href="mailto:hello@vsvcorner.example">[Placeholder email]</a>
+    </nav>
   </div>
 
-  <div class="wrap footer-bottom">
-    <p>© 2026 VSV Corner. All rights reserved.</p>
-    <p>[Placeholder: business registration / SSM number if required.]</p>
+  <div class="shell foot-end">
+    <p>&copy; 2026 VSV Corner</p>
+    <p>[Placeholder: SSM / business registration no.]</p>
   </div>
 </footer>
 
