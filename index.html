@@ -17,39 +17,49 @@
   NOTES FOR THE CLIENT
   ====================
 
-  DESIGN DIRECTION
-  The page is built around Malaysian kedai/mamak signboard visual language,
-  because that is what the brand already looks like in the real world: a
-  high-contrast royal blue and yellow signboard. So blue is the dominant
-  field here rather than the usual restaurant-website cream, and the menu
-  is set as a printed price board (leader dots running to right-aligned
-  prices) instead of a grid of photo cards.
+  WHERE THE DESIGN COMES FROM
+  Briyani is a Mughal dish, and the signature form of Mughal architecture is
+  the pointed arch. That arch is the shape language of this page: the hero
+  window, the photo frames, the price board, and the four outlet cards are
+  all cut to the same arch profile. Behind it sits a jali lattice (the
+  eight-point khatam star used in perforated screens), scalloped section
+  edges, and small star-and-diamond rules. Colour stays the brand's real
+  royal blue and yellow shopfront palette.
 
   TYPEFACES
-  Anek Latin for display. It is a variable family from Ek Type, an Indian
-  foundry, drawn to sit alongside Indic scripts. If you ever want a Tamil
-  line on the signage or the page, Anek Tamil is the matching cut and it
-  will lock up correctly. Karla carries body text.
+  Anek Latin (Ek Type) for display, drawn to sit alongside Indic scripts,
+  with its width axis pushed narrow for the signage lines. Karla for body.
+  Both self-hosted under the OFL from /assets/fonts, so the page cannot
+  fall back to Arial if a font CDN is unreachable.
 
   COPY
-  Placeholder draft written to show tone and length. Anything in [ ] is a
-  literal gap for you to fill. The Malay words used (bungkus, nasi, ayam,
-  kambing, daging, telur) are the everyday terms, but have someone on the
-  team read them over before launch.
+  Placeholder draft. Anything in [ ] is a gap for you to fill. Malay terms
+  used are the everyday ones, but have someone on the team read them over.
 
   PHOTOGRAPHY
-  Real, free-to-use photographs (Pexels License, commercial use, no
-  attribution required), each picked to match its subject. They are NOT
-  photographs of VSV Corner's own food or outlets. Replace every one with
-  the brand's own photography before launch. Source page for each is in
-  its data-source attribute.
+  Free-to-use photographs (Pexels License, commercial use, no attribution
+  required), each matched to its subject. They are NOT photographs of VSV
+  Corner's own food or outlets. Replace them with the brand's own before
+  launch. Source page for each is in its data-source attribute.
 
   LOGO
-  Still not the real artwork. The mark below is a text lockup in the
-  brand's real colours. This environment is blocked from downloading image
-  files off external hosts, so the logo in the Bloom account could not be
-  pulled in. Send the file through and it drops into /assets.
+  Still not the real artwork. This environment is blocked from downloading
+  image files off external hosts, so the logo sitting in the Bloom account
+  could not be pulled in. The mark below is a text lockup in the brand
+  colours. Send the file over and it drops into /assets.
 -->
+
+<!-- shared vector definitions: arch clips + ornament -->
+<svg class="defs" aria-hidden="true" focusable="false">
+  <defs>
+    <clipPath id="arch" clipPathUnits="objectBoundingBox">
+      <path d="M0,1 L0,0.42 C0,0.17 0.21,0.03 0.5,0 C0.79,0.03 1,0.17 1,0.42 L1,1 Z"/>
+    </clipPath>
+    <clipPath id="archWide" clipPathUnits="objectBoundingBox">
+      <path d="M0,1 L0,0.3 C0,0.12 0.2,0.02 0.5,0 C0.8,0.02 1,0.12 1,0.3 L1,1 Z"/>
+    </clipPath>
+  </defs>
+</svg>
 
 <a class="skip-link" href="#main">Skip to content</a>
 
@@ -82,51 +92,61 @@
 
   <!-- ═══════════ BANNER ═══════════ -->
   <section class="hero">
-    <img class="hero-shot"
-         src="https://images.pexels.com/photos/34484975/pexels-photo-34484975/free-photo-of-delicious-indian-biryani-platter-in-chennai.jpeg?auto=compress&cs=tinysrgb&w=1920"
-         data-source="https://www.pexels.com/photo/delicious-indian-biryani-platter-in-chennai-34484975/"
-         alt="A large biryani platter, rice and meat, photographed from above"
-         loading="eager" fetchpriority="high">
-    <span class="hero-wash" aria-hidden="true"></span>
+    <span class="jali" aria-hidden="true"></span>
 
     <div class="shell hero-in">
-      <p class="eyebrow">Sejak [year] &middot; Taiping</p>
 
-      <h1 class="hero-type">
-        <span class="l1">Dum-cooked</span>
-        <span class="l2">Briyani</span>
-        <span class="l3">every single day</span>
-      </h1>
+      <div class="hero-words">
+        <p class="eyebrow"><span class="star" aria-hidden="true"></span>Sejak [year] &middot; Taiping</p>
 
-      <div class="hero-foot">
+        <h1 class="hero-type">
+          <span class="l1">Dum-cooked</span>
+          <span class="l2">Briyani</span>
+          <span class="l3">every single day</span>
+        </h1>
+
+        <div class="rule-orn" aria-hidden="true"><i></i><b></b><i></i></div>
+
         <p class="hero-note">
           One pot, one spice blend, four outlets. Sealed and cooked slow each
           morning, the way the first one was made in Taiping.
         </p>
+
         <div class="hero-act">
           <a href="#order" class="btn btn-fill">Order &amp; Bungkus</a>
           <a href="#outlets" class="btn btn-ghost">Find an outlet</a>
         </div>
       </div>
-    </div>
 
-    <p class="hero-cert"><span>Halal</span> [cert. body + ref no.]</p>
+      <div class="hero-art">
+        <div class="hero-frame">
+          <div class="archwin">
+            <img src="https://images.pexels.com/photos/34484975/pexels-photo-34484975/free-photo-of-delicious-indian-biryani-platter-in-chennai.jpeg?auto=compress&cs=tinysrgb&w=1400"
+                 data-source="https://www.pexels.com/photo/delicious-indian-biryani-platter-in-chennai-34484975/"
+                 alt="A large biryani platter of rice and meat, photographed from above"
+                 loading="eager" fetchpriority="high">
+          </div>
+        </div>
+        <p class="hero-cert"><b>Halal</b> [cert. body + ref no.]</p>
+      </div>
+
+    </div>
   </section>
 
   <!-- ═══════════ TICKER ═══════════ -->
   <div class="ticker" role="presentation">
     <div class="ticker-run">
-      <span>Nasi Briyani</span><b>✳</b><span>Ayam</span><b>✳</b><span>Kambing</span><b>✳</b><span>Daging</span><b>✳</b><span>Telur</span><b>✳</b><span>Acar</span><b>✳</b><span>Air Bandung</span><b>✳</b>
-      <span>Nasi Briyani</span><b>✳</b><span>Ayam</span><b>✳</b><span>Kambing</span><b>✳</b><span>Daging</span><b>✳</b><span>Telur</span><b>✳</b><span>Acar</span><b>✳</b><span>Air Bandung</span><b>✳</b>
+      <span>Nasi Briyani</span><b></b><span>Ayam</span><b></b><span>Kambing</span><b></b><span>Daging</span><b></b><span>Telur</span><b></b><span>Acar</span><b></b><span>Air Bandung</span><b></b>
+      <span>Nasi Briyani</span><b></b><span>Ayam</span><b></b><span>Kambing</span><b></b><span>Daging</span><b></b><span>Telur</span><b></b><span>Acar</span><b></b><span>Air Bandung</span><b></b>
     </div>
   </div>
 
   <!-- ═══════════ WHO WE ARE ═══════════ -->
-  <section class="story" id="story">
+  <section class="story scallop" id="story">
     <div class="shell story-in">
 
       <div class="story-lead">
-        <p class="tag">Who We Are</p>
+        <p class="tag"><span class="star" aria-hidden="true"></span>Who We Are</p>
         <h2>We never stopped running it like a corner shop.</h2>
       </div>
 
@@ -145,9 +165,11 @@
       </div>
 
       <figure class="story-shot">
-        <img src="https://images.pexels.com/photos/35539329/pexels-photo-35539329.jpeg?auto=compress&cs=tinysrgb&w=1200"
-             data-source="https://www.pexels.com/photo/traditional-indian-biryani-served-on-banana-leaves-35539329/"
-             alt="Biryani served on a banana leaf" loading="lazy">
+        <div class="archwin archwin-sm">
+          <img src="https://images.pexels.com/photos/35539329/pexels-photo-35539329.jpeg?auto=compress&cs=tinysrgb&w=1200"
+               data-source="https://www.pexels.com/photo/traditional-indian-biryani-served-on-banana-leaves-35539329/"
+               alt="Biryani served on a banana leaf" loading="lazy">
+        </div>
         <figcaption>Served on leaf, the way it has always gone out.</figcaption>
       </figure>
 
@@ -174,10 +196,11 @@
 
   <!-- ═══════════ MENU ═══════════ -->
   <section class="menu" id="menu">
-    <div class="shell">
+    <span class="jali" aria-hidden="true"></span>
 
+    <div class="shell menu-shell">
       <div class="menu-head">
-        <p class="tag tag-light">The Board</p>
+        <p class="tag tag-light"><span class="star" aria-hidden="true"></span>The Board</p>
         <h2>What everybody orders</h2>
         <p class="menu-sub">A short board on purpose. [Placeholder: drop in the full menu and the real prices.]</p>
       </div>
@@ -185,65 +208,78 @@
       <div class="menu-grid">
 
         <div class="board">
-          <div class="board-top">
-            <span>Nasi Briyani</span>
-            <span>RM</span>
+          <span class="corner tl" aria-hidden="true"></span>
+          <span class="corner tr" aria-hidden="true"></span>
+          <span class="corner bl" aria-hidden="true"></span>
+          <span class="corner br" aria-hidden="true"></span>
+
+          <div class="board-inner">
+            <div class="board-top">
+              <span>Nasi Briyani</span>
+              <span>RM</span>
+            </div>
+
+            <ul class="board-list">
+              <li>
+                <p class="row"><span class="nm">Ayam</span><span class="dot" aria-hidden="true"></span><span class="pr">[00.00]</span></p>
+                <p class="sub">Bone-in chicken, cooked down into the rice. Ordered without looking at the board.</p>
+              </li>
+              <li>
+                <p class="row"><span class="nm">Kambing</span><span class="dot" aria-hidden="true"></span><span class="pr">[00.00]</span></p>
+                <p class="sub">Mutton, taken slow until it gives up the bone.</p>
+              </li>
+              <li>
+                <p class="row"><span class="nm">Daging</span><span class="dot" aria-hidden="true"></span><span class="pr">[00.00]</span></p>
+                <p class="sub">Beef, for the table that asks "ada daging tak?" before sitting down.</p>
+              </li>
+              <li>
+                <p class="row"><span class="nm">Telur</span><span class="dot" aria-hidden="true"></span><span class="pr">[00.00]</span></p>
+                <p class="sub">Egg. The rice and the spice, nothing else needed.</p>
+              </li>
+              <li>
+                <p class="row"><span class="nm">Special</span><span class="dot" aria-hidden="true"></span><span class="pr">[00.00]</span></p>
+                <p class="sub">[Placeholder: what goes on the house platter.]</p>
+              </li>
+            </ul>
+
+            <div class="rule-orn rule-dark" aria-hidden="true"><i></i><b></b><i></i></div>
+
+            <div class="board-top">
+              <span>Sebelah &amp; Minum</span>
+              <span>RM</span>
+            </div>
+
+            <ul class="board-list">
+              <li>
+                <p class="row"><span class="nm">Ayam Goreng Berempah</span><span class="dot" aria-hidden="true"></span><span class="pr">[00.00]</span></p>
+                <p class="sub">Spiced fried chicken, for the table that never orders one plate.</p>
+              </li>
+              <li>
+                <p class="row"><span class="nm">Acar</span><span class="dot" aria-hidden="true"></span><span class="pr">[00.00]</span></p>
+              </li>
+              <li>
+                <p class="row"><span class="nm">Air Bandung</span><span class="dot" aria-hidden="true"></span><span class="pr">[00.00]</span></p>
+              </li>
+            </ul>
+
+            <p class="board-foot">Prices are placeholders. Bungkus available at every outlet.</p>
           </div>
-
-          <ul class="board-list">
-            <li>
-              <p class="row"><span class="nm">Ayam</span><span class="dot" aria-hidden="true"></span><span class="pr">[00.00]</span></p>
-              <p class="sub">Bone-in chicken, cooked down into the rice. Ordered without looking at the board.</p>
-            </li>
-            <li>
-              <p class="row"><span class="nm">Kambing</span><span class="dot" aria-hidden="true"></span><span class="pr">[00.00]</span></p>
-              <p class="sub">Mutton, taken slow until it gives up the bone.</p>
-            </li>
-            <li>
-              <p class="row"><span class="nm">Daging</span><span class="dot" aria-hidden="true"></span><span class="pr">[00.00]</span></p>
-              <p class="sub">Beef, for the table that asks "ada daging tak?" before sitting down.</p>
-            </li>
-            <li>
-              <p class="row"><span class="nm">Telur</span><span class="dot" aria-hidden="true"></span><span class="pr">[00.00]</span></p>
-              <p class="sub">Egg. The rice and the spice, nothing else needed.</p>
-            </li>
-            <li>
-              <p class="row"><span class="nm">Special</span><span class="dot" aria-hidden="true"></span><span class="pr">[00.00]</span></p>
-              <p class="sub">[Placeholder: what goes on the house platter.]</p>
-            </li>
-          </ul>
-
-          <div class="board-top board-mid">
-            <span>Sebelah &amp; Minum</span>
-            <span>RM</span>
-          </div>
-
-          <ul class="board-list">
-            <li>
-              <p class="row"><span class="nm">Ayam Goreng Berempah</span><span class="dot" aria-hidden="true"></span><span class="pr">[00.00]</span></p>
-              <p class="sub">Spiced fried chicken, for the table that never orders one plate.</p>
-            </li>
-            <li>
-              <p class="row"><span class="nm">Acar</span><span class="dot" aria-hidden="true"></span><span class="pr">[00.00]</span></p>
-            </li>
-            <li>
-              <p class="row"><span class="nm">Air Bandung</span><span class="dot" aria-hidden="true"></span><span class="pr">[00.00]</span></p>
-            </li>
-          </ul>
-
-          <p class="board-foot">Prices are placeholders. Bungkus available at every outlet.</p>
         </div>
 
         <div class="menu-shots">
           <figure>
-            <img src="https://images.pexels.com/photos/33947401/pexels-photo-33947401/free-photo-of-authentic-chicken-biryani-in-clay-pot.jpeg?auto=compress&cs=tinysrgb&w=1000"
-                 data-source="https://www.pexels.com/photo/33947401/"
-                 alt="Biryani cooked and served in a clay pot" loading="lazy">
+            <div class="archwin archwin-sm">
+              <img src="https://images.pexels.com/photos/33947401/pexels-photo-33947401/free-photo-of-authentic-chicken-biryani-in-clay-pot.jpeg?auto=compress&cs=tinysrgb&w=1000"
+                   data-source="https://www.pexels.com/photo/33947401/"
+                   alt="Biryani cooked and served in a clay pot" loading="lazy">
+            </div>
           </figure>
           <figure>
-            <img src="https://images.pexels.com/photos/35071813/pexels-photo-35071813.jpeg?auto=compress&cs=tinysrgb&w=1000"
-                 data-source="https://www.pexels.com/photo/delicious-south-indian-chicken-fry-with-slices-of-onions-35071813/"
-                 alt="South Indian style fried chicken with sliced onion" loading="lazy">
+            <div class="archwin archwin-sm">
+              <img src="https://images.pexels.com/photos/35071813/pexels-photo-35071813.jpeg?auto=compress&cs=tinysrgb&w=1000"
+                   data-source="https://www.pexels.com/photo/delicious-south-indian-chicken-fry-with-slices-of-onions-35071813/"
+                   alt="South Indian style fried chicken with sliced onion" loading="lazy">
+            </div>
             <figcaption>Ayam goreng berempah</figcaption>
           </figure>
         </div>
@@ -253,16 +289,17 @@
   </section>
 
   <!-- ═══════════ HISTORY ═══════════ -->
-  <section class="past" id="history">
+  <section class="past scallop" id="history">
     <div class="shell">
       <div class="past-head">
-        <p class="tag">Our History</p>
+        <p class="tag"><span class="star" aria-hidden="true"></span>Our History</p>
         <h2>One pot, then four kitchens.</h2>
         <p class="past-sub">[Placeholder: give each year below a real detail. A queue out the door, a second stove, the first bungkus order. Specifics are what stop a history section reading like filler.]</p>
       </div>
 
       <ol class="years">
         <li>
+          <span class="yr-node" aria-hidden="true"></span>
           <span class="yr">[Year]</span>
           <div class="yr-body">
             <h3>Taiping</h3>
@@ -270,6 +307,7 @@
           </div>
         </li>
         <li>
+          <span class="yr-node" aria-hidden="true"></span>
           <span class="yr">[Year]</span>
           <div class="yr-body">
             <h3>Batu Caves</h3>
@@ -277,6 +315,7 @@
           </div>
         </li>
         <li>
+          <span class="yr-node" aria-hidden="true"></span>
           <span class="yr">[Year]</span>
           <div class="yr-body">
             <h3>Penang</h3>
@@ -284,6 +323,7 @@
           </div>
         </li>
         <li>
+          <span class="yr-node" aria-hidden="true"></span>
           <span class="yr">[Year]</span>
           <div class="yr-body">
             <h3>Johor Bahru</h3>
@@ -296,59 +336,70 @@
 
   <!-- ═══════════ OUTLETS ═══════════ -->
   <section class="outlets" id="outlets">
-    <div class="shell">
+    <span class="jali" aria-hidden="true"></span>
+
+    <div class="shell outlets-shell">
       <div class="outlets-head">
-        <p class="tag tag-light">Find Us</p>
+        <p class="tag tag-light"><span class="star" aria-hidden="true"></span>Find Us</p>
         <h2>Four outlets, one kitchen standard</h2>
       </div>
 
-      <ul class="outlet-list">
+      <ul class="shopfronts">
         <li>
           <a href="#">
-            <span class="no">01</span>
-            <span class="place">
-              <b>Taiping</b>
-              <i>Perak &middot; the original</i>
+            <span class="front">
+              <span class="front-no">01</span>
+              <span class="front-town">Taiping</span>
+              <span class="front-state">Perak</span>
+              <span class="front-orig">The original</span>
             </span>
-            <span class="addr">[Placeholder address line, Taiping, Perak]</span>
-            <span class="hrs">[11:00 to 22:00] daily</span>
-            <span class="go" aria-hidden="true">Directions →</span>
+            <span class="front-info">
+              <span class="addr">[Placeholder address line, Taiping, Perak]</span>
+              <span class="hrs">[11:00 to 22:00] daily</span>
+              <span class="go">Directions</span>
+            </span>
           </a>
         </li>
         <li>
           <a href="#">
-            <span class="no">02</span>
-            <span class="place">
-              <b>Batu Caves</b>
-              <i>Selangor</i>
+            <span class="front">
+              <span class="front-no">02</span>
+              <span class="front-town">Batu Caves</span>
+              <span class="front-state">Selangor</span>
             </span>
-            <span class="addr">[Placeholder address line, Batu Caves, Selangor]</span>
-            <span class="hrs">[11:00 to 22:00] daily</span>
-            <span class="go" aria-hidden="true">Directions →</span>
+            <span class="front-info">
+              <span class="addr">[Placeholder address line, Batu Caves, Selangor]</span>
+              <span class="hrs">[11:00 to 22:00] daily</span>
+              <span class="go">Directions</span>
+            </span>
           </a>
         </li>
         <li>
           <a href="#">
-            <span class="no">03</span>
-            <span class="place">
-              <b>Penang</b>
-              <i>Pulau Pinang</i>
+            <span class="front">
+              <span class="front-no">03</span>
+              <span class="front-town">Penang</span>
+              <span class="front-state">Pulau Pinang</span>
             </span>
-            <span class="addr">[Placeholder address line, Penang]</span>
-            <span class="hrs">[11:00 to 22:00] daily</span>
-            <span class="go" aria-hidden="true">Directions →</span>
+            <span class="front-info">
+              <span class="addr">[Placeholder address line, Penang]</span>
+              <span class="hrs">[11:00 to 22:00] daily</span>
+              <span class="go">Directions</span>
+            </span>
           </a>
         </li>
         <li>
           <a href="#">
-            <span class="no">04</span>
-            <span class="place">
-              <b>Johor Bahru</b>
-              <i>Johor</i>
+            <span class="front">
+              <span class="front-no">04</span>
+              <span class="front-town">Johor Bahru</span>
+              <span class="front-state">Johor</span>
             </span>
-            <span class="addr">[Placeholder address line, Johor Bahru, Johor]</span>
-            <span class="hrs">[11:00 to 22:00] daily</span>
-            <span class="go" aria-hidden="true">Directions →</span>
+            <span class="front-info">
+              <span class="addr">[Placeholder address line, Johor Bahru, Johor]</span>
+              <span class="hrs">[11:00 to 22:00] daily</span>
+              <span class="go">Directions</span>
+            </span>
           </a>
         </li>
       </ul>
@@ -356,8 +407,10 @@
   </section>
 
   <!-- ═══════════ CALL TO ACTION ═══════════ -->
-  <section class="order" id="order">
+  <section class="order scallop" id="order">
+    <span class="jali jali-dark" aria-hidden="true"></span>
     <div class="shell order-in">
+      <div class="rule-orn rule-dark" aria-hidden="true"><i></i><b></b><i></i></div>
       <h2>Lapar? Bungkus one.</h2>
       <p>Order for delivery, or call the outlet and we will have it wrapped and waiting.</p>
       <div class="order-act">
