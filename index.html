@@ -6,6 +6,7 @@
 <title>VSV Corner | Briyani Specialist</title>
 <meta name="description" content="VSV Corner, briyani specialist. Dum-cooked daily in Taiping, Batu Caves, Penang and Johor Bahru.">
 <link rel="icon" href="data:,">
+<link rel="preload" href="assets/fonts/rozha-one.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/anek-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/karla.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/fonts.css">
@@ -17,47 +18,52 @@
   NOTES FOR THE CLIENT
   ====================
 
-  WHERE THE DESIGN COMES FROM
-  Briyani is a Mughal dish, and the signature form of Mughal architecture is
-  the pointed arch. That arch is the shape language of this page: the hero
-  window, the photo frames, the price board, and the four outlet cards are
-  all cut to the same arch profile. Behind it sits a jali lattice (the
-  eight-point khatam star used in perforated screens), scalloped section
-  edges, and small star-and-diamond rules. Colour stays the brand's real
-  royal blue and yellow shopfront palette.
+  WHERE THIS DESIGN COMES FROM
+  Briyani is a dish of the Mughal court, so the page borrows the court's
+  own architecture. The central ornament is a cusped multifoil arch (the
+  scalloped doorway of Indo-Islamic buildings), generated as precise SVG
+  geometry: eleven foils with a central lobe at the apex. It frames the
+  hero dish, the photography, and the four outlet doorways. The brand's
+  royal blue and yellow stay, but the yellow is treated as gold line-work
+  and ornament on deep night blue, instead of flat slabs of colour.
 
-  TYPEFACES
-  Anek Latin (Ek Type) for display, drawn to sit alongside Indic scripts,
-  with its width axis pushed narrow for the signage lines. Karla for body.
-  Both self-hosted under the OFL from /assets/fonts, so the page cannot
-  fall back to Arial if a font CDN is unreachable.
+  TYPE
+  Rozha One (Indian Type Foundry) carries the big statements: a
+  high-contrast display serif drawn alongside Devanagari. Anek Latin does
+  signage and labels, Karla does body text. All self-hosted under the OFL
+  in /assets/fonts, so nothing falls back to Arial if a CDN is blocked.
 
   COPY
-  Placeholder draft. Anything in [ ] is a gap for you to fill. Malay terms
-  used are the everyday ones, but have someone on the team read them over.
+  Placeholder draft. Anything in [ ] is a literal gap for you to fill.
 
   PHOTOGRAPHY
   Free-to-use photographs (Pexels License, commercial use, no attribution
-  required), each matched to its subject. They are NOT photographs of VSV
-  Corner's own food or outlets. Replace them with the brand's own before
-  launch. Source page for each is in its data-source attribute.
+  required), each matched to its subject. NOT photographs of VSV Corner's
+  own food or outlets; replace with the brand's own before launch. Source
+  pages are kept in each image's data-source attribute.
 
   LOGO
-  Still not the real artwork. This environment is blocked from downloading
-  image files off external hosts, so the logo sitting in the Bloom account
-  could not be pulled in. The mark below is a text lockup in the brand
-  colours. Send the file over and it drops into /assets.
+  The images attached in chat never reached this build environment (its
+  attachment folders arrive empty, and outbound image hosts are blocked),
+  so the mark in the masthead is still a drawn arch badge in brand
+  colours, not the real logo artwork. Once the logo file lands in the
+  repo, swap it into the .mark link in the header and footer.
 -->
 
-<!-- shared vector definitions: arch clips + ornament -->
 <svg class="defs" aria-hidden="true" focusable="false">
   <defs>
-    <clipPath id="arch" clipPathUnits="objectBoundingBox">
-      <path d="M0,1 L0,0.42 C0,0.17 0.21,0.03 0.5,0 C0.79,0.03 1,0.17 1,0.42 L1,1 Z"/>
+    <!-- cusped multifoil arch, 300x400 user space -->
+    <clipPath id="cuspWin">
+      <path d="M15,400 L15,330 A38.0,38.0 0 0 0 15.0,259.7 A38.0,38.0 0 0 0 15.0,189.4 A37.8,37.8 0 0 0 21.6,119.6 A37.6,37.6 0 0 0 56.3,59.4 A37.6,37.6 0 0 0 115.9,23.2 A36.9,36.9 0 0 0 184.1,23.2 A37.6,37.6 0 0 0 243.7,59.4 A37.6,37.6 0 0 0 278.4,119.6 A37.8,37.8 0 0 0 285.0,189.4 A38.0,38.0 0 0 0 285.0,259.7 A38.0,38.0 0 0 0 285.0,330.0 L285,400 Z"/>
     </clipPath>
-    <clipPath id="archWide" clipPathUnits="objectBoundingBox">
-      <path d="M0,1 L0,0.3 C0,0.12 0.2,0.02 0.5,0 C0.8,0.02 1,0.12 1,0.3 L1,1 Z"/>
-    </clipPath>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FDD017"/>
+      <stop offset="1" stop-color="#C8891B"/>
+    </linearGradient>
+    <path id="frame" d="M0,400 L0,170 C0,60 62,12 150,0 C238,12 300,60 300,170 L300,400 Z M15,400 L15,330 A38.0,38.0 0 0 0 15.0,259.7 A38.0,38.0 0 0 0 15.0,189.4 A37.8,37.8 0 0 0 21.6,119.6 A37.6,37.6 0 0 0 56.3,59.4 A37.6,37.6 0 0 0 115.9,23.2 A36.9,36.9 0 0 0 184.1,23.2 A37.6,37.6 0 0 0 243.7,59.4 A37.6,37.6 0 0 0 278.4,119.6 A37.8,37.8 0 0 0 285.0,189.4 A38.0,38.0 0 0 0 285.0,259.7 A38.0,38.0 0 0 0 285.0,330.0 L285,400 Z"/>
+    <path id="echo" d="M23.1,325.5 A35.7,35.7 0 0 0 23.1,259.4 A35.7,35.7 0 0 0 23.1,193.3 A35.6,35.6 0 0 0 29.3,127.8 A35.3,35.3 0 0 0 61.9,71.1 A35.4,35.4 0 0 0 117.9,37.1 A34.7,34.7 0 0 0 182.1,37.1 A35.4,35.4 0 0 0 238.1,71.1 A35.3,35.3 0 0 0 270.7,127.8 A35.6,35.6 0 0 0 276.9,193.3 A35.7,35.7 0 0 0 276.9,259.4 A35.7,35.7 0 0 0 276.9,325.5"/>
+    <path id="doorline" d="M15,400 L15,330 A38.0,38.0 0 0 0 15.0,259.7 A38.0,38.0 0 0 0 15.0,189.4 A37.8,37.8 0 0 0 21.6,119.6 A37.6,37.6 0 0 0 56.3,59.4 A37.6,37.6 0 0 0 115.9,23.2 A36.9,36.9 0 0 0 184.1,23.2 A37.6,37.6 0 0 0 243.7,59.4 A37.6,37.6 0 0 0 278.4,119.6 A37.8,37.8 0 0 0 285.0,189.4 A38.0,38.0 0 0 0 285.0,259.7 A38.0,38.0 0 0 0 285.0,330.0 L285,400"/>
+    <path id="outerline" d="M0,400 L0,170 C0,60 62,12 150,0 C238,12 300,60 300,170 L300,400"/>
   </defs>
 </svg>
 
@@ -66,7 +72,10 @@
 <header class="masthead" id="top">
   <div class="shell masthead-in">
     <a class="mark" href="#top" aria-label="VSV Corner, home">
-      <span class="mark-badge">VSV</span>
+      <svg class="mark-arch" viewBox="0 0 300 400" aria-hidden="true">
+        <path d="M15,400 L15,330 A38.0,38.0 0 0 0 15.0,259.7 A38.0,38.0 0 0 0 15.0,189.4 A37.8,37.8 0 0 0 21.6,119.6 A37.6,37.6 0 0 0 56.3,59.4 A37.6,37.6 0 0 0 115.9,23.2 A36.9,36.9 0 0 0 184.1,23.2 A37.6,37.6 0 0 0 243.7,59.4 A37.6,37.6 0 0 0 278.4,119.6 A37.8,37.8 0 0 0 285.0,189.4 A38.0,38.0 0 0 0 285.0,259.7 A38.0,38.0 0 0 0 285.0,330.0 L285,400 Z" fill="url(#gold)"/>
+        <text x="150" y="252" text-anchor="middle" class="mark-arch-txt">VSV</text>
+      </svg>
       <span class="mark-name">
         <b>Corner</b>
         <i>Briyani Specialist</i>
@@ -92,44 +101,47 @@
 
   <!-- ═══════════ BANNER ═══════════ -->
   <section class="hero">
-    <span class="jali" aria-hidden="true"></span>
+    <span class="jali-vignette" aria-hidden="true"></span>
+    <svg class="sparks" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <g fill="#FDD017">
+        <rect x="140" y="150" width="7" height="7" transform="rotate(45 143 153)" opacity=".5"/>
+        <rect x="300" y="470" width="5" height="5" transform="rotate(45 302 472)" opacity=".3"/>
+        <rect x="220" y="700" width="6" height="6" transform="rotate(45 223 703)" opacity=".4"/>
+        <rect x="1260" y="200" width="7" height="7" transform="rotate(45 1263 203)" opacity=".5"/>
+        <rect x="1150" y="520" width="5" height="5" transform="rotate(45 1152 522)" opacity=".3"/>
+        <rect x="1320" y="680" width="6" height="6" transform="rotate(45 1323 683)" opacity=".4"/>
+        <rect x="80" y="420" width="4" height="4" transform="rotate(45 82 422)" opacity=".25"/>
+        <rect x="1390" y="420" width="4" height="4" transform="rotate(45 1392 422)" opacity=".25"/>
+      </g>
+    </svg>
 
     <div class="shell hero-in">
 
-      <div class="hero-words">
-        <p class="eyebrow"><span class="star" aria-hidden="true"></span>Sejak [year] &middot; Taiping</p>
+      <svg class="cusp cusp-hero" viewBox="-80 -90 460 490" role="img"
+           aria-label="A large biryani platter of rice and meat, seen through a cusped golden arch">
+        <path id="crownArc" d="M-64,116 A240,240 0 0 1 364,116" fill="none"/>
+        <text class="arc-text" dy="-6">
+          <textPath href="#crownArc" startOffset="50%" text-anchor="middle">Taiping &#183; Batu Caves &#183; Penang &#183; Johor Bahru</textPath>
+        </text>
+        <image href="https://images.pexels.com/photos/34484975/pexels-photo-34484975/free-photo-of-delicious-indian-biryani-platter-in-chennai.jpeg?auto=compress&cs=tinysrgb&w=1400"
+               data-source="https://www.pexels.com/photo/delicious-indian-biryani-platter-in-chennai-34484975/"
+               x="0" y="0" width="300" height="400" preserveAspectRatio="xMidYMid slice"
+               clip-path="url(#cuspWin)"/>
+        <use href="#frame" fill="url(#gold)" fill-rule="evenodd"/>
+        <use href="#echo" fill="none" stroke="#FDD017" stroke-width="1.3" opacity=".55"/>
+      </svg>
 
-        <h1 class="hero-type">
-          <span class="l1">Dum-cooked</span>
-          <span class="l2">Briyani</span>
-          <span class="l3">every single day</span>
-        </h1>
-
-        <div class="rule-orn" aria-hidden="true"><i></i><b></b><i></i></div>
-
-        <p class="hero-note">
-          One pot, one spice blend, four outlets. Sealed and cooked slow each
-          morning, the way the first one was made in Taiping.
-        </p>
-
-        <div class="hero-act">
-          <a href="#order" class="btn btn-fill">Order &amp; Bungkus</a>
-          <a href="#outlets" class="btn btn-ghost">Find an outlet</a>
-        </div>
+      <h1 class="hero-word">Briyani</h1>
+      <p class="hero-line">Dum-cooked daily &#183; sejak [year]</p>
+      <p class="hero-note">
+        One pot, one spice blend, four outlets. Sealed and cooked slow each
+        morning, the way the first one was made in Taiping.
+      </p>
+      <div class="hero-act">
+        <a href="#order" class="btn btn-fill">Order &amp; Bungkus</a>
+        <a href="#outlets" class="btn btn-ghost">Find an outlet</a>
       </div>
-
-      <div class="hero-art">
-        <div class="hero-frame">
-          <div class="archwin">
-            <img src="https://images.pexels.com/photos/34484975/pexels-photo-34484975/free-photo-of-delicious-indian-biryani-platter-in-chennai.jpeg?auto=compress&cs=tinysrgb&w=1400"
-                 data-source="https://www.pexels.com/photo/delicious-indian-biryani-platter-in-chennai-34484975/"
-                 alt="A large biryani platter of rice and meat, photographed from above"
-                 loading="eager" fetchpriority="high">
-          </div>
-        </div>
-        <p class="hero-cert"><b>Halal</b> [cert. body + ref no.]</p>
-      </div>
-
+      <p class="hero-cert"><b>Halal</b> [cert. body + ref no.]</p>
     </div>
   </section>
 
@@ -142,65 +154,63 @@
   </div>
 
   <!-- ═══════════ WHO WE ARE ═══════════ -->
-  <section class="story scallop" id="story">
+  <section class="story fringe" id="story">
     <div class="shell story-in">
 
-      <div class="story-lead">
-        <p class="tag"><span class="star" aria-hidden="true"></span>Who We Are</p>
+      <div class="story-copy">
+        <p class="tag"><span class="diamond" aria-hidden="true"></span>Who We Are</p>
         <h2>We never stopped running it like a corner shop.</h2>
-      </div>
-
-      <div class="story-body">
         <p class="story-first">
           VSV Corner started on one corner lot in Taiping, and most days the
           briyani was gone before the lunch crowd thinned out.
           [Placeholder: the real founding story goes here. Year, founder's
           name, and the specific thing that made people queue.]
         </p>
-        <p>
+        <p class="story-more">
           The pot has not changed. Neither has the spice blend, or the way the
           rice gets layered. The only thing that grew is how many kitchens are
           doing it at once.
         </p>
+
+        <dl class="facts">
+          <div>
+            <dt>Outlets</dt>
+            <dd>04</dd>
+            <p>Taiping, Batu Caves, Penang, Johor Bahru.</p>
+          </div>
+          <div>
+            <dt>Cooked from</dt>
+            <dd>5<span>am</span></dd>
+            <p>Every pot sealed and dum-cooked before service, never reheated.</p>
+          </div>
+          <div>
+            <dt>Spice blend</dt>
+            <dd>01</dd>
+            <p>Ground and mixed in-house, identical at all four kitchens.</p>
+          </div>
+        </dl>
       </div>
 
       <figure class="story-shot">
-        <div class="archwin archwin-sm">
-          <img src="https://images.pexels.com/photos/35539329/pexels-photo-35539329.jpeg?auto=compress&cs=tinysrgb&w=1200"
-               data-source="https://www.pexels.com/photo/traditional-indian-biryani-served-on-banana-leaves-35539329/"
-               alt="Biryani served on a banana leaf" loading="lazy">
-        </div>
+        <svg class="cusp" viewBox="0 0 300 400" role="img" aria-label="Biryani served on a banana leaf">
+          <image href="https://images.pexels.com/photos/35539329/pexels-photo-35539329.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                 data-source="https://www.pexels.com/photo/traditional-indian-biryani-served-on-banana-leaves-35539329/"
+                 x="0" y="0" width="300" height="400" preserveAspectRatio="xMidYMid slice"
+                 clip-path="url(#cuspWin)"/>
+          <use href="#frame" fill="#C8891B" fill-rule="evenodd"/>
+        </svg>
         <figcaption>Served on leaf, the way it has always gone out.</figcaption>
       </figure>
-
-      <dl class="facts">
-        <div>
-          <dt>Outlets</dt>
-          <dd>04</dd>
-          <p>Taiping, Batu Caves, Penang, Johor Bahru.</p>
-        </div>
-        <div>
-          <dt>Cooked from</dt>
-          <dd>5<span>am</span></dd>
-          <p>Every pot sealed and dum-cooked before service, never reheated.</p>
-        </div>
-        <div>
-          <dt>Spice blend</dt>
-          <dd>01</dd>
-          <p>Ground and mixed in-house, identical at all four kitchens.</p>
-        </div>
-      </dl>
 
     </div>
   </section>
 
   <!-- ═══════════ MENU ═══════════ -->
   <section class="menu" id="menu">
-    <span class="jali" aria-hidden="true"></span>
-
+    <span class="jali-vignette" aria-hidden="true"></span>
     <div class="shell menu-shell">
       <div class="menu-head">
-        <p class="tag tag-light"><span class="star" aria-hidden="true"></span>The Board</p>
+        <p class="tag tag-light"><span class="diamond" aria-hidden="true"></span>The Board</p>
         <h2>What everybody orders</h2>
         <p class="menu-sub">A short board on purpose. [Placeholder: drop in the full menu and the real prices.]</p>
       </div>
@@ -212,8 +222,9 @@
           <span class="corner tr" aria-hidden="true"></span>
           <span class="corner bl" aria-hidden="true"></span>
           <span class="corner br" aria-hidden="true"></span>
-
           <div class="board-inner">
+            <p class="board-lamp" aria-hidden="true"></p>
+
             <div class="board-top">
               <span>Nasi Briyani</span>
               <span>RM</span>
@@ -242,7 +253,7 @@
               </li>
             </ul>
 
-            <div class="rule-orn rule-dark" aria-hidden="true"><i></i><b></b><i></i></div>
+            <div class="rule-orn" aria-hidden="true"><i></i><b></b><i></i></div>
 
             <div class="board-top">
               <span>Sebelah &amp; Minum</span>
@@ -268,18 +279,22 @@
 
         <div class="menu-shots">
           <figure>
-            <div class="archwin archwin-sm">
-              <img src="https://images.pexels.com/photos/33947401/pexels-photo-33947401/free-photo-of-authentic-chicken-biryani-in-clay-pot.jpeg?auto=compress&cs=tinysrgb&w=1000"
-                   data-source="https://www.pexels.com/photo/33947401/"
-                   alt="Biryani cooked and served in a clay pot" loading="lazy">
-            </div>
+            <svg class="cusp" viewBox="0 0 300 400" role="img" aria-label="Biryani cooked and served in a clay pot">
+              <image href="https://images.pexels.com/photos/33947401/pexels-photo-33947401/free-photo-of-authentic-chicken-biryani-in-clay-pot.jpeg?auto=compress&cs=tinysrgb&w=1000"
+                     data-source="https://www.pexels.com/photo/33947401/"
+                     x="0" y="0" width="300" height="400" preserveAspectRatio="xMidYMid slice"
+                     clip-path="url(#cuspWin)"/>
+              <use href="#frame" fill="#C8891B" fill-rule="evenodd"/>
+            </svg>
           </figure>
           <figure>
-            <div class="archwin archwin-sm">
-              <img src="https://images.pexels.com/photos/35071813/pexels-photo-35071813.jpeg?auto=compress&cs=tinysrgb&w=1000"
-                   data-source="https://www.pexels.com/photo/delicious-south-indian-chicken-fry-with-slices-of-onions-35071813/"
-                   alt="South Indian style fried chicken with sliced onion" loading="lazy">
-            </div>
+            <svg class="cusp" viewBox="0 0 300 400" role="img" aria-label="South Indian style fried chicken with sliced onion">
+              <image href="https://images.pexels.com/photos/35071813/pexels-photo-35071813.jpeg?auto=compress&cs=tinysrgb&w=1000"
+                     data-source="https://www.pexels.com/photo/delicious-south-indian-chicken-fry-with-slices-of-onions-35071813/"
+                     x="0" y="0" width="300" height="400" preserveAspectRatio="xMidYMid slice"
+                     clip-path="url(#cuspWin)"/>
+              <use href="#frame" fill="#C8891B" fill-rule="evenodd"/>
+            </svg>
             <figcaption>Ayam goreng berempah</figcaption>
           </figure>
         </div>
@@ -289,10 +304,10 @@
   </section>
 
   <!-- ═══════════ HISTORY ═══════════ -->
-  <section class="past scallop" id="history">
+  <section class="past fringe" id="history">
     <div class="shell">
       <div class="past-head">
-        <p class="tag"><span class="star" aria-hidden="true"></span>Our History</p>
+        <p class="tag"><span class="diamond" aria-hidden="true"></span>Our History</p>
         <h2>One pot, then four kitchens.</h2>
         <p class="past-sub">[Placeholder: give each year below a real detail. A queue out the door, a second stove, the first bungkus order. Specifics are what stop a history section reading like filler.]</p>
       </div>
@@ -336,69 +351,75 @@
 
   <!-- ═══════════ OUTLETS ═══════════ -->
   <section class="outlets" id="outlets">
-    <span class="jali" aria-hidden="true"></span>
-
+    <span class="jali-vignette" aria-hidden="true"></span>
     <div class="shell outlets-shell">
       <div class="outlets-head">
-        <p class="tag tag-light"><span class="star" aria-hidden="true"></span>Find Us</p>
-        <h2>Four outlets, one kitchen standard</h2>
+        <p class="tag tag-light"><span class="diamond" aria-hidden="true"></span>Find Us</p>
+        <h2>Four doorways, one kitchen standard</h2>
       </div>
 
-      <ul class="shopfronts">
+      <ul class="doors">
         <li>
-          <a href="#">
-            <span class="front">
-              <span class="front-no">01</span>
-              <span class="front-town">Taiping</span>
-              <span class="front-state">Perak</span>
-              <span class="front-orig">The original</span>
-            </span>
-            <span class="front-info">
-              <span class="addr">[Placeholder address line, Taiping, Perak]</span>
-              <span class="hrs">[11:00 to 22:00] daily</span>
-              <span class="go">Directions</span>
+          <a href="#" class="door">
+            <svg viewBox="0 0 300 400" aria-hidden="true">
+              <use href="#outerline" fill="none" stroke="#E6A820" stroke-width="2" opacity=".35"/>
+              <use href="#doorline" fill="none" stroke="#E6A820" stroke-width="2.5"/>
+            </svg>
+            <span class="door-body">
+              <span class="door-no">01</span>
+              <span class="door-town">Taiping</span>
+              <span class="door-state">Perak &#183; the original</span>
+              <span class="door-addr">[Placeholder address line, Taiping, Perak]</span>
+              <span class="door-hrs">[11:00 to 22:00] daily</span>
+              <span class="door-go">Directions</span>
             </span>
           </a>
         </li>
         <li>
-          <a href="#">
-            <span class="front">
-              <span class="front-no">02</span>
-              <span class="front-town">Batu Caves</span>
-              <span class="front-state">Selangor</span>
-            </span>
-            <span class="front-info">
-              <span class="addr">[Placeholder address line, Batu Caves, Selangor]</span>
-              <span class="hrs">[11:00 to 22:00] daily</span>
-              <span class="go">Directions</span>
-            </span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <span class="front">
-              <span class="front-no">03</span>
-              <span class="front-town">Penang</span>
-              <span class="front-state">Pulau Pinang</span>
-            </span>
-            <span class="front-info">
-              <span class="addr">[Placeholder address line, Penang]</span>
-              <span class="hrs">[11:00 to 22:00] daily</span>
-              <span class="go">Directions</span>
+          <a href="#" class="door">
+            <svg viewBox="0 0 300 400" aria-hidden="true">
+              <use href="#outerline" fill="none" stroke="#E6A820" stroke-width="2" opacity=".35"/>
+              <use href="#doorline" fill="none" stroke="#E6A820" stroke-width="2.5"/>
+            </svg>
+            <span class="door-body">
+              <span class="door-no">02</span>
+              <span class="door-town">Batu Caves</span>
+              <span class="door-state">Selangor</span>
+              <span class="door-addr">[Placeholder address line, Batu Caves, Selangor]</span>
+              <span class="door-hrs">[11:00 to 22:00] daily</span>
+              <span class="door-go">Directions</span>
             </span>
           </a>
         </li>
         <li>
-          <a href="#">
-            <span class="front">
-              <span class="front-no">04</span>
-              <span class="front-town">Johor Bahru</span>
-              <span class="front-state">Johor</span>
+          <a href="#" class="door">
+            <svg viewBox="0 0 300 400" aria-hidden="true">
+              <use href="#outerline" fill="none" stroke="#E6A820" stroke-width="2" opacity=".35"/>
+              <use href="#doorline" fill="none" stroke="#E6A820" stroke-width="2.5"/>
+            </svg>
+            <span class="door-body">
+              <span class="door-no">03</span>
+              <span class="door-town">Penang</span>
+              <span class="door-state">Pulau Pinang</span>
+              <span class="door-addr">[Placeholder address line, Penang]</span>
+              <span class="door-hrs">[11:00 to 22:00] daily</span>
+              <span class="door-go">Directions</span>
             </span>
-            <span class="front-info">
-              <span class="addr">[Placeholder address line, Johor Bahru, Johor]</span>
-              <span class="hrs">[11:00 to 22:00] daily</span>
-              <span class="go">Directions</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="door">
+            <svg viewBox="0 0 300 400" aria-hidden="true">
+              <use href="#outerline" fill="none" stroke="#E6A820" stroke-width="2" opacity=".35"/>
+              <use href="#doorline" fill="none" stroke="#E6A820" stroke-width="2.5"/>
+            </svg>
+            <span class="door-body">
+              <span class="door-no">04</span>
+              <span class="door-town">Johor Bahru</span>
+              <span class="door-state">Johor</span>
+              <span class="door-addr">[Placeholder address line, Johor Bahru, Johor]</span>
+              <span class="door-hrs">[11:00 to 22:00] daily</span>
+              <span class="door-go">Directions</span>
             </span>
           </a>
         </li>
@@ -407,16 +428,15 @@
   </section>
 
   <!-- ═══════════ CALL TO ACTION ═══════════ -->
-  <section class="order scallop" id="order">
-    <span class="jali jali-dark" aria-hidden="true"></span>
+  <section class="order fringe" id="order">
     <div class="shell order-in">
-      <div class="rule-orn rule-dark" aria-hidden="true"><i></i><b></b><i></i></div>
-      <h2>Lapar? Bungkus one.</h2>
+      <div class="rule-orn rule-gold" aria-hidden="true"><i></i><b></b><i></i></div>
+      <h2>Lapar? <em>Bungkus</em> one.</h2>
       <p>Order for delivery, or call the outlet and we will have it wrapped and waiting.</p>
       <div class="order-act">
-        <a href="#" class="btn btn-dark">Grab</a>
-        <a href="#" class="btn btn-dark">foodpanda</a>
-        <a href="tel:+60000000000" class="btn btn-line">Call [placeholder number]</a>
+        <a href="#" class="btn btn-fill">Grab</a>
+        <a href="#" class="btn btn-fill">foodpanda</a>
+        <a href="tel:+60000000000" class="btn btn-ghost">Call [placeholder number]</a>
       </div>
     </div>
   </section>
@@ -427,7 +447,10 @@
   <div class="shell foot-in">
     <div class="foot-brand">
       <a class="mark mark-foot" href="#top" aria-label="VSV Corner, home">
-        <span class="mark-badge">VSV</span>
+        <svg class="mark-arch" viewBox="0 0 300 400" aria-hidden="true">
+          <path d="M15,400 L15,330 A38.0,38.0 0 0 0 15.0,259.7 A38.0,38.0 0 0 0 15.0,189.4 A37.8,37.8 0 0 0 21.6,119.6 A37.6,37.6 0 0 0 56.3,59.4 A37.6,37.6 0 0 0 115.9,23.2 A36.9,36.9 0 0 0 184.1,23.2 A37.6,37.6 0 0 0 243.7,59.4 A37.6,37.6 0 0 0 278.4,119.6 A37.8,37.8 0 0 0 285.0,189.4 A38.0,38.0 0 0 0 285.0,259.7 A38.0,38.0 0 0 0 285.0,330.0 L285,400 Z" fill="url(#gold)"/>
+          <text x="150" y="252" text-anchor="middle" class="mark-arch-txt">VSV</text>
+        </svg>
         <span class="mark-name">
           <b>Corner</b>
           <i>Briyani Specialist</i>
